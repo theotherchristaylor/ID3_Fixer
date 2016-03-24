@@ -1,9 +1,12 @@
+# id3fixer.py 
+# A script to fix ID3 tags of downloaded music
+# 
+# Written by Chris Taylor, 3/23/16
+
 import sys
 import os
 
 def main():
-
-
 
     if sys.argv[1] == "":
         print "USAGE: python id3fixer.py <directory of mp3 files>"
