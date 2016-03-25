@@ -61,7 +61,7 @@ def main():
             print "[+] Changed filename to " + newFilename
             player.stop()
             print ""
-            if str(raw_input("Press ENTER for next song, X to quit: ")) == 'X' or 'x':
+            if str(raw_input("Press ENTER for next song, X to quit: ")) == 'X':
                 exit(0)
         
 
