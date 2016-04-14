@@ -50,9 +50,10 @@ def main():
             player.play(track)
             artist = str(raw_input("Artist: "))
             title = str(raw_input("Title: "))
+            rating = str(raw_input("Rating (1-3-5): "))
             comments = str(raw_input("Comments: "))
             print ""
-            executeLine = "id3v2 -t \"" + title + "\" -a \"" + artist + "\" -c \"" + comments + "\" \"" + directory + song + "\""  
+            executeLine = "id3v2 --TIT1 " + rating + " -t \"" + title + "\" -a \"" + artist + "\" -c \"" + comments + "\" \"" + directory + song + "\""  
             os.system(executeLine)
             print "[+] Changed artist to " + artist + " and title to " + title
             newFilename = artist + " - " + title + ".mp3"

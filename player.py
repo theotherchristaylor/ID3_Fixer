@@ -1,3 +1,4 @@
+
 # player.py
 # Class to play and stop mp3 files in a subprocess
 #
@@ -9,20 +10,13 @@ import time
 import signal
 
 class Player:
-        
-    def __init__(self):
-        self.process = subprocess
-
-    def play(self, track):
-        executeLine = "mpg123 \"" + track + "\""
-        self.process = subprocess.Popen(executeLine, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, preexec_fn=os.setsid)
-
-    def stop(self):
-        os.killpg(self.process.pid, signal.SIGTERM)
-
             
+        def __init__(self):
+            self.process = subprocess
+        
+        def play(self, track):
+            executeLine = "mpg123 -k 2500 \"" + track + "\""
+            self.process = subprocess.Popen(executeLine, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, preexec_fn=os.setsid)
 
-#MyPlayer = Player()
-#MyPlayer.play("../House/Julian\ Jeweil\ -\ Mad.mp3")
-#time.sleep(5)
-#MyPlayer.stop()
+        def stop(self):
+            os.killpg(self.process.pid, signal.SIGTERM)
